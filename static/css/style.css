@@ -1,0 +1,50 @@
+body{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+
+.contenedor {
+    background-color: gray;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lista-principal {
+    background-color: rgb(203, 201, 201);
+    width: 100vh;
+    height: 30vh;
+    list-style: none;
+    border: solid 10px rgb(49, 49, 127);
+    border-radius: 20px;
+
+
+}
+
+.lista-principal li {
+    color: black;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+
+}
+
+.contenido {
+    list-style: none    ;
+}
