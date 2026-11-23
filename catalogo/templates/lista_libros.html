@@ -1,0 +1,40 @@
+{% extends 'base_biblioteca.html' %}
+
+    {% block contenido %} 
+
+    <div class="contenedor">
+
+        <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Portada</th>
+            <th scope="col">Autor</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Disponivilidad</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for libro in libros %}
+                
+
+                <tr>
+                <td>{{libro.titulo}}</td>
+                <td><img src="{{libro.portada.url}}" class="rounded mx-auto d-block" alt="portada"></td>
+                <td>{{libro.autor}}</td>
+                <td>{{libro.categoria}}</td>
+                <td>
+                    {% if libro.disponible == True %}
+                        si
+                    {% else %}
+                        no
+                    {% endif %}
+                </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+        
+    {% endblock contenido %}
