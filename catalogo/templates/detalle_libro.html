@@ -1,0 +1,15 @@
+{% extends 'base_biblioteca.html' %}
+{% load static %}
+{% block css_extra %} <link rel="stylesheet" href="{% static 'css/detalle_libro.css' %}"> {% endblock css_extra %}
+{% block contenido %} 
+    <div class="detalle-libro">
+        <img src="{{ libro.portada.url }}" class="rounded mx-auto d-block" alt="...">
+        <div class="detalles">
+            <h4>{{libro.titulo}}</h4>
+            <p> <b>Categoria: </b> {{libro.categoria}}</p>
+            <p> <b>Autor: </b> {{libro.autor}}</p>
+            <p><b>Resumen: </b> {{libro.resumen}}</p>
+            <a href="{% url 'lista de libros' %}" class="btn-solid theme-primary">ver lista de libros</a>
+        </div>
+    </div>
+{% endblock contenido %}
