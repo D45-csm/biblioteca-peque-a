@@ -12,7 +12,7 @@ html {
 
 .contenedor {
     background-color: gray;
-    height: 50vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,8 +23,6 @@ html {
     list-style: none;
     border: solid 10px rgb(49, 49, 127);
     border-radius: 20px;
-
-
 }
 
 .lista-principal li {
