@@ -10,6 +10,11 @@
             <p> <b>Autor: </b> {{libro.autor}}</p>
             <p><b>Resumen: </b> {{libro.resumen}}</p>
             <a href="{% url 'lista de libros' %}" class="btn-solid theme-primary">ver lista de libros</a>
+           
+            <form action= '{% url 'eliminar-libro' libro.id %}' method="POST">
+                {% csrf_token %}
+                <button type="submit" >eliminar libro</button>
+            </form>
         </div>
     </div>
 {% endblock contenido %}
