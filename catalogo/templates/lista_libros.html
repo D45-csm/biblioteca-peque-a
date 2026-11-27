@@ -2,37 +2,41 @@
 
     {% block contenido %} 
 
-
+        <a href="{% url 'crear-libro' %}">crear nuevo libro</a>
         <table class="table">
-        <thead>
-            <tr>
-            <th scope="col">Titulo</th>
-            <th scope="col">Autor</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Disponivilidad</th>
-            <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-
-            {% for libro in libros %}
-                
-
+            <thead>
                 <tr>
-                <td>{{libro.titulo}}</td>
-                <td>{{libro.autor}}</td>
-                <td>{{libro.categoria}}</td>
-                <td>
-                    {% if libro.disponible == True %}
-                        si
-                    {% else %}
-                        no
-                    {% endif %}
-                </td>
-                <td><a href="{% url 'detalle_libro' libro.id %}">ver</a></td>
+                <th scope="col">Titulo</th>
+                <th scope="col">Autor</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Disponivilidad</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
                 </tr>
-            {% endfor %}
-        </tbody>
+            </thead>
+            <tbody>
+
+                {% for libro in libros %}
+                    
+
+                    <tr>
+                        <td>{{libro.titulo}}</td>
+                        <td>{{libro.autor}}</td>
+                        <td>{{libro.categoria}}</td>
+                        <td>
+                            {% if libro.disponible == True %}
+                                si
+                            {% else %}
+                                no
+                            {% endif %}
+                        </td>
+                        <td><a href="{% url 'detalle_libro' libro.id %}">ver</a></td>
+                        <td><a href="{% url 'editar-libro' libro.id %}">editar</a></td>
+                    </tr>
+                    {% empty %}
+                    <h3>no hay registros aun</h3>
+                {% endfor %}
+            </tbody>
         </table>
         
     {% endblock contenido %}
