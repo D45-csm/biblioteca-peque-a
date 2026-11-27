@@ -1,0 +1,17 @@
+{% extends 'base_biblioteca.html' %}
+{% load static %}
+{% block css_extra %} <link rel="stylesheet" href="{% static 'css/detalle_libro.css' %}"> {% endblock css_extra %}
+{% block contenido %} 
+    <div class="detalle-libro">
+        <div class="detalles">
+            <h4> <b>nombre: </b> {{autor.nombre}}</h4>
+            <p> <b>pais: </b> {{autor.pais}}</p>
+            <a href="{% url 'lista de autores' %}" class="btn-solid theme-primary">ver lista de autores</a>
+            
+            <form method="POST" action="{% url 'eliminar-autor' autor.id%}">
+                {% csrf_token%}
+                <button type="submit">eliminar autor</button>
+            </form>
+        </div>
+    </div>
+{% endblock contenido %}
