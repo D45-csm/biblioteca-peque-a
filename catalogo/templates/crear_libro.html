@@ -1,0 +1,12 @@
+{% extends 'base_biblioteca.html' %}
+{% load static %}
+
+    {% block contenido %} 
+    <div class="mb-3">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">crear</button>
+        </form>
+    </div>
+    {% endblock contenido %}
