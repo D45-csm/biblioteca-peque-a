@@ -1,0 +1,37 @@
+{% extends 'base_biblioteca.html' %}
+{% block contenido %} 
+
+
+    <a href="{% url 'crear-autor' %}">crear autor</a>
+
+        <form action=" {% url 'lista de autores' %} " method="get" role="search" >
+            <input name="q" type="search" value="{{ request.GET.q | default:'' }}">
+            <button type="submit">buscar</button>
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Pais</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for autor in autores %}
+
+                <tr>
+                    <td>{{ autor.nombre }}</td>
+                    <td>{{ autor.pais }}</td>
+                    <td><a href="{% url 'detalle-autor' autor.id %}">ver</a></td>
+                    <td><a href="{% url 'editar-autor' autor.id %}">editar</a></td>
+                </tr>
+                {% empty %}
+                <h3>no hay registros aun</h3>
+            </tbody>
+                {% endfor %}
+        </table>
+
+
+{% endblock contenido %}
